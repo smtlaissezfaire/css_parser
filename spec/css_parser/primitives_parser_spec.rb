@@ -102,4 +102,6 @@ describe CSSPrimitivesParser do
   it "should parse rgb percentages" do
     parse("rgb(10%,20%,100%)").should_not be_nil
   end
+  
+  it "should not parse a negative percentage (or should it)?"
 end
