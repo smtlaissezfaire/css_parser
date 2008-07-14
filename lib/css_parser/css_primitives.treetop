@@ -1,6 +1,6 @@
 grammar CSSPrimitives
   rule primitive
-    hex_value / semi_colon / colon / value / space
+    percentage / hex_value / semi_colon / colon / value / space
   end
 
   rule hex_value
@@ -32,7 +32,39 @@ grammar CSSPrimitives
   end
 
   rule color
-    "red" / hex_value
+    color_keyword / hex_value / rgb
+  end
+
+  rule color_keyword
+    "aqua" / "black" / "blue" / "fuchsia" / "gray" / "green" / "lime" / "maroon" / "navy" / "olive" / "purple" / "red" / "silver" / "teal" / "white" / "yellow"
+  end
+
+  rule rgb
+    "rgb(" rgb_value "," rgb_value "," rgb_value ")"
+  end
+
+  rule rgb_value
+    percentage / two_fifty_six_color
+  end
+
+  rule two_fifty_six_color
+    [0-9]+
+  end
+
+  rule percentage
+    number "%"
+  end
+
+  rule number
+    negative_number / positive_number
+  end
+
+  rule negative_number
+    "-" positive_number
+  end
+
+  rule positive_number
+    [0-9]+
   end
 
   rule space
