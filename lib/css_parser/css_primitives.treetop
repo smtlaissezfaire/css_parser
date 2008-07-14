@@ -48,7 +48,7 @@ grammar CSSPrimitives
   end
 
   rule two_fifty_six_color
-    [0-9]+
+    number
   end
 
   rule percentage
