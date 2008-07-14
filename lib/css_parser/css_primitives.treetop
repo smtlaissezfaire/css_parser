@@ -28,7 +28,11 @@ grammar CSSPrimitives
   end
 
   rule value
-    "#000" / "10px" / "red"
+    color / "10px"
+  end
+
+  rule color
+    "red" / hex_value
   end
 
   rule space
