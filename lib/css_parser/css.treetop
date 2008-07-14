@@ -1,4 +1,6 @@
 grammar CSS
+  include CSSPrimitives
+
   rule stylesheet
     selector (("," selector)+)? css_rule?
   end
@@ -17,22 +19,6 @@ grammar CSS
 
   rule key
     "color" / "font-size" / "padding-top"
-  end
-
-  rule semi_colon
-    ";"
-  end
-
-  rule colon
-    ":"
-  end
-
-  rule value
-    "#000" / "10px" / "red"
-  end
-
-  rule space
-    " "
   end
 
   rule id_selector

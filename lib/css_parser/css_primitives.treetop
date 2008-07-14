@@ -1,6 +1,6 @@
 grammar CSSPrimitives
   rule primitive
-    hex_value
+    hex_value / semi_colon / colon / value / space
   end
 
   rule hex_value
@@ -17,5 +17,21 @@ grammar CSSPrimitives
 
   rule hex_char
     [0-9a-fA-F]
+  end
+
+  rule semi_colon
+    ";"
+  end
+
+  rule colon
+    ":"
+  end
+
+  rule value
+    "#000" / "10px" / "red"
+  end
+
+  rule space
+    " "
   end
 end
