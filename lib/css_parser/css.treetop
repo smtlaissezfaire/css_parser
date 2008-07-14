@@ -1,0 +1,49 @@
+grammar CSS
+  rule stylesheet
+    selector (("," selector)+)? css_rule?
+  end
+
+  rule selector
+    id_selector / class_selector
+  end
+
+  rule css_rule
+    "{" key_value_pair+ "}"
+  end
+
+  rule key_value_pair
+    key colon value semi_colon
+  end
+
+  rule key
+    "color" / "font-size" / "padding-top"
+  end
+
+  rule semi_colon
+    ";"
+  end
+
+  rule colon
+    ":"
+  end
+
+  rule value
+    "#000" / "10px" / "red"
+  end
+
+  rule space
+    " "
+  end
+
+  rule id_selector
+    "#" identifier
+  end
+
+  rule class_selector
+    "." identifier
+  end
+
+  rule identifier
+    [a-zA-Z]+
+  end
+end
