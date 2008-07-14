@@ -1,0 +1,21 @@
+grammar CSSPrimitives
+  rule primitive
+    hex_value
+  end
+
+  rule hex_value
+    "#" (six_digit_hex / three_digit_hex)
+  end
+
+  rule six_digit_hex
+    three_digit_hex three_digit_hex
+  end
+
+  rule three_digit_hex
+    hex_char hex_char hex_char
+  end
+
+  rule hex_char
+    [0-9a-fA-F]
+  end
+end
