@@ -20,7 +20,15 @@ grammar URL
   end
 
   rule path
-    "/" string?
+    "/" string? query_string?
+  end
+
+  rule query_string
+    "?" url_key_value_pair (("&" url_key_value_pair)+)?
+  end
+
+  rule url_key_value_pair
+    string "=" string
   end
 
   rule protocol

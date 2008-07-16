@@ -202,6 +202,24 @@ describe CSSPrimitivesParser do
     parse("http://localhost:65536").should_not be_nil
   end
   
+  it "should allow a query string with a question mark and key value pair" do
+    parse("http://localhost:3000/foo?bar=quxx").should_not be_nil
+  end
+  
+  it "should allow a query string with multiple key value pairs" do
+    parse("http://localhost:3000/foo?bar=quxx&foo=bar").should_not be_nil
+  end
+  
+  it "should allow a query string with three key value pairs" do
+    parse("http://localhost:3000/foo?bar=quxx&foo=bar&one=two").should_not be_nil
+  end
+  
+  it "should allow a query string with multiple key value pairs with numbers as values" do
+    pending 'todo'
+    parse("http://localhost:3000/foo?bar=1&foo=2").should_not be_nil
+  end
+
+  
   # TODO: See http://www.w3.org/TR/REC-CSS2/syndata.html#values
   
   # TODO: Numbers, integers
