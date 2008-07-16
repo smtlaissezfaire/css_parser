@@ -269,15 +269,25 @@ describe CSSPrimitivesParser do
   
   # TODO: Frequencies
   
-  it "should parse 10Hz"
+  it "should parse 10Hz" do
+    parse("10Hz").should_not be_nil
+  end
   
-  it "should parse 10kHZ"
+  it "should parse 10kHZ" do
+    parse("10kHz").should_not be_nil
+  end
   
-  it "should parse +10Hz"
+  it "should parse +10Hz" do
+    parse("+10Hz").should_not be_nil
+  end
   
-  it "should NOT parse -10Hz"
+  it "should parse 11.2Hz" do
+    parse("11.2Hz").should_not be_nil
+  end
   
-  it "should parse 11.2Hz"
+  it "should NOT parse -10Hz" do
+    parse("-10Hz").should be_nil
+  end
   
   # TODO: Strings
 end

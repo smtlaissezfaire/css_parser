@@ -1,6 +1,6 @@
 grammar CSSPrimitives
   rule primitive
-    length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time
+    length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time / frequency
   end
 
   rule hex_value
@@ -160,10 +160,18 @@ grammar CSSPrimitives
   end
 
   rule positive_float
-    positive_number ("." positive_number)?
+    "+"? positive_number ("." positive_number)?
   end
 
   rule time_unit
     "ms" / "s"
+  end
+
+  rule frequency
+    positive_float frequency_unit
+  end
+
+  rule frequency_unit
+    "Hz" / "kHz"
   end
 end
