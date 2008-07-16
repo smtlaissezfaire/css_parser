@@ -243,17 +243,29 @@ describe CSSPrimitivesParser do
   
   # TODO: Times
   
-  it "should parse 10ms"
+  it "should parse 10ms" do
+    parse("10ms").should_not be_nil
+  end
   
-  it "should parse 10s"
+  it "should parse 10s" do
+    parse("10s").should_not be_nil
+  end
   
-  it "should not parse -10s"
+  it "should not parse -10s" do
+    parse("-10s").should be_nil
+  end
   
-  it "should parse 11ms"
+  it "should parse 11ms" do
+    parse("11ms").should_not be_nil
+  end
   
-  it "should not parse -11ms"
+  it "should not parse -11ms" do
+    parse("-11ms").should be_nil
+  end
   
-  it "should parse 11.2s"
+  it "should parse 11.2s" do
+    parse("11.2s").should_not be_nil
+  end
   
   # TODO: Frequencies
   
