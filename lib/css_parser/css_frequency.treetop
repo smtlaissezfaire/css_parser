@@ -1,0 +1,9 @@
+grammar CSSFrequency
+  rule frequency
+    positive_float frequency_unit
+  end
+
+  rule frequency_unit
+    "Hz" / "kHz"
+  end
+end

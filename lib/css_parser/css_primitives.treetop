@@ -1,4 +1,6 @@
 grammar CSSPrimitives
+  include CSSFrequency
+
   rule primitive
     length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time / frequency
   end
@@ -133,13 +135,5 @@ grammar CSSPrimitives
 
   rule time_unit
     "ms" / "s"
-  end
-
-  rule frequency
-    positive_float frequency_unit
-  end
-
-  rule frequency_unit
-    "Hz" / "kHz"
   end
 end
