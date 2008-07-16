@@ -12,10 +12,6 @@ grammar CSSPrimitives
     length / percentage / value / space / url / angle / time / frequency
   end
 
-  rule hex_char
-    [0-9a-fA-F]
-  end
-
   rule value
     color / "10px"
   end

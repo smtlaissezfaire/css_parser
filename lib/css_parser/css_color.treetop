@@ -30,4 +30,8 @@ grammar CSSColor
   rule three_digit_hex
     hex_char hex_char hex_char
   end
+
+  rule hex_char
+    [0-9a-fA-F]
+  end
 end
