@@ -1,0 +1,6 @@
+
+* A parser/generator of the CSS2 spec, written in treetop.
+
+The CSS 2 spec is at:
+
+http://www.w3.org/TR/REC-CSS2/cover.html
