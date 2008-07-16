@@ -1,0 +1,13 @@
+grammar CSSNumber
+  rule number
+    sign? positive_number
+  end
+
+  rule positive_number
+    [0-9]+
+  end
+
+  rule float
+    number ("." number)? 
+  end
+end

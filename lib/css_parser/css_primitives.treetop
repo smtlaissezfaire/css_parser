@@ -1,4 +1,6 @@
 grammar CSSPrimitives
+  include CSSString
+  include CSSNumber
   include CSSFrequency
   include CSSPercentage
   include CSSTime
@@ -10,21 +12,5 @@ grammar CSSPrimitives
 
   rule data_primitive
     length / percentage / color / space / url / angle / time / frequency
-  end
-
-  rule number
-    sign? positive_number
-  end
-
-  rule positive_number
-    [0-9]+
-  end
-
-  rule float
-    number ("." number)? 
-  end
-
-  rule string
-    [a-zA-Z\.\/]+
   end
 end

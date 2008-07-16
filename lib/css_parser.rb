@@ -3,6 +3,8 @@ require "treetop"
 require File.dirname(__FILE__) + "/css_parser/css_pre_parser"
 
 Treetop.load File.dirname(__FILE__) + "/css_parser/css_symbols"
+Treetop.load File.dirname(__FILE__) + "/css_parser/css_number"
+Treetop.load File.dirname(__FILE__) + "/css_parser/css_string"
 Treetop.load File.dirname(__FILE__) + "/css_parser/css_color"
 Treetop.load File.dirname(__FILE__) + "/css_parser/css_length"
 Treetop.load File.dirname(__FILE__) + "/css_parser/css_percentage"

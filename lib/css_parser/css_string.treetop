@@ -1,0 +1,5 @@
+grammar CSSString
+  rule string
+    [a-zA-Z\.\/]+
+  end
+end
