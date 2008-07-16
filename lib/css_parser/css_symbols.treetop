@@ -1,0 +1,21 @@
+grammar CSSSymbols
+  rule symbol
+    semi_colon / colon / sign / space
+  end
+
+  rule semi_colon
+    ";"
+  end
+
+  rule colon
+    ":"
+  end
+
+  rule sign
+    "+" / "-"
+  end
+
+  rule space
+    " "
+  end
+end

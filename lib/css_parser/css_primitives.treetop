@@ -6,21 +6,14 @@ grammar CSSPrimitives
   include CSSColor
   include CSSLength
   include URL
+  include CSSSymbols
 
   rule primitive
-    length / percentage / semi_colon / colon / value / space / url / angle / time / frequency
+    length / percentage / value / space / url / angle / time / frequency
   end
 
   rule hex_char
     [0-9a-fA-F]
-  end
-
-  rule semi_colon
-    ";"
-  end
-
-  rule colon
-    ":"
   end
 
   rule value
@@ -31,16 +24,8 @@ grammar CSSPrimitives
     sign? positive_number
   end
 
-  rule sign
-    "+" / "-"
-  end
-
   rule positive_number
     [0-9]+
-  end
-
-  rule space
-    " "
   end
 
   rule float
