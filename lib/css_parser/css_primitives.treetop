@@ -8,12 +8,8 @@ grammar CSSPrimitives
   include URL
   include CSSSymbols
 
-  rule primitive
-    length / percentage / value / space / url / angle / time / frequency
-  end
-
   rule value
-    color / "10px"
+    length / percentage / color / space / url / angle / time / frequency
   end
 
   rule number
