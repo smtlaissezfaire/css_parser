@@ -1,0 +1,21 @@
+grammar CSSColor
+  rule color
+    color_keyword / hex_value / rgb
+  end
+
+  rule color_keyword
+    "aqua" / "black" / "blue" / "fuchsia" / "gray" / "green" / "lime" / "maroon" / "navy" / "olive" / "purple" / "red" / "silver" / "teal" / "white" / "yellow"
+  end
+
+  rule rgb
+    "rgb(" rgb_value "," rgb_value "," rgb_value ")"
+  end
+
+  rule rgb_value
+    percentage / two_fifty_six_color
+  end
+
+  rule two_fifty_six_color
+    number
+  end
+end
