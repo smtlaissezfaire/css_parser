@@ -1,0 +1,9 @@
+grammar CSSLength
+  rule length
+    sign? float length_unit
+  end
+
+  rule length_unit
+    "em" / "ex" / "px" / "in" / "cm" / "mm" / "pt" / "pc"
+  end
+end

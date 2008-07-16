@@ -3,6 +3,7 @@ grammar CSSPrimitives
   include CSSTime
   include CSSAngle
   include CSSColor
+  include CSSLength
   include URL
 
   rule primitive
@@ -43,14 +44,6 @@ grammar CSSPrimitives
 
   rule space
     " "
-  end
-
-  rule length
-    sign? float length_unit
-  end
-
-  rule length_unit
-    "em" / "ex" / "px" / "in" / "cm" / "mm" / "pt" / "pc"
   end
 
   rule float
