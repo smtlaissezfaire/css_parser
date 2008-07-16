@@ -1,0 +1,9 @@
+grammar CSSAngle
+  rule angle
+    float angle_unit
+  end
+
+  rule angle_unit
+    "deg" / "grad" / "rad"
+  end
+end

@@ -1,6 +1,7 @@
 grammar CSSPrimitives
   include CSSFrequency
   include CSSTime
+  include CSSAngle
 
   rule primitive
     length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time / frequency
@@ -116,13 +117,5 @@ grammar CSSPrimitives
   
   rule protocol
     "https" / "http" / "ftp"
-  end
-
-  rule angle
-    float angle_unit
-  end
-
-  rule angle_unit
-    "deg" / "grad" / "rad"
   end
 end
