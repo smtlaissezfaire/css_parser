@@ -8,7 +8,7 @@ grammar CSSPrimitives
   include URL
   include CSSSymbols
 
-  rule value
+  rule data_primitive
     length / percentage / color / space / url / angle / time / frequency
   end
 

@@ -14,7 +14,7 @@ grammar CSS
   end
 
   rule key_value_pair
-    key colon value semi_colon
+    key colon data_primitive semi_colon
   end
 
   rule key
