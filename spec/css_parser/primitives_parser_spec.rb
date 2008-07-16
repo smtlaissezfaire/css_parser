@@ -208,16 +208,52 @@ describe CSSPrimitivesParser do
   it "should allow a port number of port number of 65536" do
     parse("http://localhost:65536").should_not be_nil
   end
-
+  
   # TODO: See http://www.w3.org/TR/REC-CSS2/syndata.html#values
+  
+  # TODO: Numbers, integers
   
   # TODO: Counters
   
   # TODO: Angles
   
+  it "should parse 10deg"
+  
+  it "should parse 10grad"
+  
+  it "should parse 10rad"
+  
+  it "should parse -10deg"
+  
+  it "should parse 1234.45deg"
+  
+  it "should parse +10deg"
+  
   # TODO: Times
   
+  it "should parse 10ms"
+  
+  it "should parse 10s"
+  
+  it "should not parse -10s"
+  
+  it "should parse 11ms"
+  
+  it "should not parse -11ms"
+  
+  it "should parse 11.2s"
+  
   # TODO: Frequencies
+  
+  it "should parse 10Hz"
+  
+  it "should parse 10kHZ"
+  
+  it "should parse +10Hz"
+  
+  it "should NOT parse -10Hz"
+  
+  it "should parse 11.2Hz"
   
   # TODO: Strings
 end
