@@ -1,5 +1,6 @@
 grammar CSSPrimitives
   include CSSFrequency
+  include CSSTime
 
   rule primitive
     length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time / frequency
@@ -123,17 +124,5 @@ grammar CSSPrimitives
 
   rule angle_unit
     "deg" / "grad" / "rad"
-  end
-
-  rule time
-    positive_float time_unit
-  end
-
-  rule positive_float
-    "+"? positive_number ("." positive_number)?
-  end
-
-  rule time_unit
-    "ms" / "s"
   end
 end

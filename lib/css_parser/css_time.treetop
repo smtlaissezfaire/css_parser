@@ -1,0 +1,13 @@
+grammar CSSTime
+  rule time
+    positive_float time_unit
+  end
+
+  rule positive_float
+    "+"? positive_number ("." positive_number)?
+  end
+
+  rule time_unit
+    "ms" / "s"
+  end
+end
