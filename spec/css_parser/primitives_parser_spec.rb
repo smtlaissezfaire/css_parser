@@ -161,20 +161,13 @@ describe CSSPrimitivesParser do
   
   # urls
   
-  it "should parse http://google.com/foo.gif" do
-    parse("http://google.com/foo.gif").should_not be_nil
-  end
+  schemes =  [:ftp, :http, :https, :gopher, :mailto, :news, :nntp]
+  schemes += [:telnet, :wais, :file, :prospero ]
   
-  it "should parse ftp://google.com/foo.gif" do
-    parse("ftp://google.com/foo.gif").should_not be_nil
-  end
-  
-  it "should parse https://google.com/foo.gif" do
-    parse("https://google.com/foo.gif").should_not be_nil
-  end
-  
-  it "should parse http://google.com" do
-    parse("http://google.com").should_not be_nil
+  schemes.each do |scheme|
+    it "should parse #{scheme}//eastmedia.com/" do
+      parse("#{scheme}://eastmedia.com/").should_not be_nil
+    end
   end
   
   it "should parse http://google.com/" do

@@ -24,6 +24,7 @@ grammar URL
   end
 
   rule protocol
-    "https" / "http" / "ftp"
+    "https" / "http" / "ftp" / "gopher" / "mailto" / "news" / "nntp" /
+    "telnet" / "wais" / "file" / "prospero"
   end
 end
