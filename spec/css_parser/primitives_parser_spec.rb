@@ -104,4 +104,108 @@ describe CSSPrimitivesParser do
   end
   
   it "should not parse a negative percentage (or should it)?"
+  
+  # lengths
+  
+  it "should parse 0.5em" do
+    parse("0.5em").should_not be_nil
+  end
+  
+  it "should parse 1em" do
+    parse("1em").should_not be_nil
+  end
+  
+  it "should parse -1em" do
+    parse("-1em").should_not be_nil
+  end
+  
+  it "should parse 2em" do
+    parse("2em").should_not be_nil
+  end
+  
+  it "should parse 1ex" do
+    parse("1ex").should_not be_nil
+  end
+  
+  it "should parse 1.5ex" do
+    parse("1.5ex").should_not be_nil
+  end
+  
+  it "should parse 1px" do
+    parse("1px").should_not be_nil
+  end
+  
+  it "should parse -134.4px" do
+    parse("-134.4px").should_not be_nil
+  end
+  
+  it "should parse 0.5in" do
+    parse("0.5in").should_not be_nil
+  end
+  
+  it "should parse 3cm" do
+    parse("3cm").should_not be_nil
+  end
+  
+  it "should parse 4mm" do
+    parse("4mm").should_not be_nil
+  end
+  
+  it "should parse 12pt" do
+    parse("12pt").should_not be_nil
+  end
+
+  it "should parse 1pc" do
+    parse("1pc").should_not be_nil
+  end
+  
+  # urls
+  
+  it "should parse http://google.com/foo.gif" do
+    parse("http://google.com/foo.gif").should_not be_nil
+  end
+  
+  it "should parse ftp://google.com/foo.gif" do
+    parse("ftp://google.com/foo.gif").should_not be_nil
+  end
+  
+  it "should parse https://google.com/foo.gif" do
+    parse("https://google.com/foo.gif").should_not be_nil
+  end
+  
+  it "should parse http://google.com" do
+    parse("http://google.com").should_not be_nil
+  end
+  
+  it "should parse http://google.com/" do
+    parse("http://google.com/").should_not be_nil
+  end
+  
+  it "should parse a url with a long path http://google.com/foo/bar/baz" do
+    parse("http://google.com/foo/bar/baz").should_not be_nil
+  end
+  
+  it "should parse a url from a different domain" do
+    parse("http://foobar.com").should_not be_nil
+  end
+  
+  it "should not parse a strange domain" do
+    parse("http://localhost").should_not be_nil
+  end
+  
+  it "should take a relative path" do
+    parse("/foo/bar.gif").should_not be_nil
+  end
+  
+  it "should allow port numbers" do
+    parse("http://localhost:3000").should_not be_nil
+  end
+  
+  it "should allow a port number of 1" do
+    parse("http://localhost:1").should_not be_nil
+  end
+  
+  it "should allow a port number of port number of 65536" do
+    parse("http://localhost:65536").should_not be_nil
+  end
 end

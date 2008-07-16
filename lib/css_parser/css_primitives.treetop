@@ -1,6 +1,6 @@
 grammar CSSPrimitives
   rule primitive
-    percentage / hex_value / semi_colon / colon / value / space
+    length / percentage / hex_value / semi_colon / colon / value / space / url
   end
 
   rule hex_value
@@ -69,5 +69,81 @@ grammar CSSPrimitives
 
   rule space
     " "
+  end
+
+  rule length
+    float length_unit
+  end
+
+  rule length_unit
+    em / ex / px / in / cm / mm / pt / pc
+  end
+
+  rule em
+    "em"
+  end
+
+  rule float
+    number ("." number)? 
+  end
+
+  rule ex
+    "ex"
+  end
+
+  rule px
+    "px"
+  end
+
+  rule in
+    "in"
+  end
+
+  rule cm
+    "cm"
+  end
+
+  rule mm
+    "mm"
+  end
+
+  rule pt
+    "pt"
+  end
+
+  rule pc
+    "pc"
+  end
+
+  rule url
+    protocol_with_suffix? domain_with_optional_port path?
+  end
+
+  rule protocol_with_suffix
+    protocol "://"
+  end
+
+  rule domain_with_optional_port
+    domain (":" port_number)?
+  end
+
+  rule port_number
+    positive_number
+  end
+
+  rule domain
+    string
+  end
+
+  rule path
+    "/" string?
+  end
+
+  rule string
+    [a-zA-Z\.\/]+
+  end
+  
+  rule protocol
+    "https" / "http" / "ftp"
   end
 end
