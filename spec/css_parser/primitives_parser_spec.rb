@@ -217,17 +217,29 @@ describe CSSPrimitivesParser do
   
   # TODO: Angles
   
-  it "should parse 10deg"
+  it "should parse 10deg" do
+    parse("10deg").should_not be_nil
+  end
   
-  it "should parse 10grad"
+  it "should parse 10grad" do
+    parse("10grad").should_not be_nil
+  end
   
-  it "should parse 10rad"
+  it "should parse 10rad" do
+    parse("10rad").should_not be_nil
+  end
   
-  it "should parse -10deg"
+  it "should parse -10deg" do
+    parse("-10deg").should_not be_nil
+  end
   
-  it "should parse 1234.45deg"
+  it "should parse 1234.45deg" do
+    parse("1234.45deg").should_not be_nil
+  end
   
-  it "should parse +10deg"
+  it "should parse +10deg" do
+    parse("+10deg").should_not be_nil
+  end
   
   # TODO: Times
   

@@ -1,6 +1,6 @@
 grammar CSSPrimitives
   rule primitive
-    length / percentage / hex_value / semi_colon / colon / value / space / url
+    length / percentage / hex_value / semi_colon / colon / value / space / url / angle
   end
 
   rule hex_value
@@ -56,11 +56,11 @@ grammar CSSPrimitives
   end
 
   rule number
-    negative_number / positive_number
+    sign? positive_number
   end
 
-  rule negative_number
-    "-" positive_number
+  rule sign
+    "+" / "-"
   end
 
   rule positive_number
@@ -72,7 +72,7 @@ grammar CSSPrimitives
   end
 
   rule length
-    float length_unit
+    sign? float length_unit
   end
 
   rule length_unit
@@ -145,5 +145,13 @@ grammar CSSPrimitives
   
   rule protocol
     "https" / "http" / "ftp"
+  end
+
+  rule angle
+    float angle_unit
+  end
+
+  rule angle_unit
+    "deg" / "grad" / "rad"
   end
 end
