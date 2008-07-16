@@ -18,4 +18,16 @@ grammar CSSColor
   rule two_fifty_six_color
     number
   end
+
+  rule hex_value
+    "#" (six_digit_hex / three_digit_hex)
+  end
+
+  rule six_digit_hex
+    three_digit_hex three_digit_hex
+  end
+
+  rule three_digit_hex
+    hex_char hex_char hex_char
+  end
 end
