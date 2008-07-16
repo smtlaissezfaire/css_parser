@@ -5,7 +5,7 @@ grammar CSSPrimitives
   include URL
 
   rule primitive
-    length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time / frequency
+    length / percentage / semi_colon / colon / value / space / url / angle / time / frequency
   end
 
   rule hex_value
