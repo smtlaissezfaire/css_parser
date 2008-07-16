@@ -1,14 +1,15 @@
 grammar CSSPrimitives
-  include CSSString
-  include CSSNumber
-  include CSSFrequency
-  include CSSPercentage
-  include CSSTime
-  include CSSAngle
-  include CSSColor
-  include CSSLength
-  include URL
   include CSSSymbols
+
+  include CSSNumber
+  include CSSLength
+  include CSSPercentage
+  include URL
+  include CSSColor
+  include CSSAngle
+  include CSSTime
+  include CSSFrequency
+  include CSSString
 
   rule data_primitive
     length / percentage / color / space / url / angle / time / frequency
