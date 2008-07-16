@@ -76,43 +76,11 @@ grammar CSSPrimitives
   end
 
   rule length_unit
-    em / ex / px / in / cm / mm / pt / pc
-  end
-
-  rule em
-    "em"
+    "em" / "ex" / "px" / "in" / "cm" / "mm" / "pt" / "pc"
   end
 
   rule float
     number ("." number)? 
-  end
-
-  rule ex
-    "ex"
-  end
-
-  rule px
-    "px"
-  end
-
-  rule in
-    "in"
-  end
-
-  rule cm
-    "cm"
-  end
-
-  rule mm
-    "mm"
-  end
-
-  rule pt
-    "pt"
-  end
-
-  rule pc
-    "pc"
   end
 
   rule url
