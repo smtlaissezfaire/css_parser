@@ -1,0 +1,5 @@
+grammar CSSPercentage
+  rule percentage
+    number "%"
+  end
+end

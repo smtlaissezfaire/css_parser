@@ -1,5 +1,6 @@
 grammar CSSPrimitives
   include CSSFrequency
+  include CSSPercentage
   include CSSTime
   include CSSAngle
   include CSSColor
@@ -24,10 +25,6 @@ grammar CSSPrimitives
 
   rule value
     color / "10px"
-  end
-
-  rule percentage
-    number "%"
   end
 
   rule number
