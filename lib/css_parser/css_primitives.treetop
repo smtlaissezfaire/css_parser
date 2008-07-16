@@ -2,6 +2,7 @@ grammar CSSPrimitives
   include CSSFrequency
   include CSSTime
   include CSSAngle
+  include URL
 
   rule primitive
     length / percentage / hex_value / semi_colon / colon / value / space / url / angle / time / frequency
@@ -87,35 +88,7 @@ grammar CSSPrimitives
     number ("." number)? 
   end
 
-  rule url
-    protocol_with_suffix? domain_with_optional_port path?
-  end
-
-  rule protocol_with_suffix
-    protocol "://"
-  end
-
-  rule domain_with_optional_port
-    domain (":" port_number)?
-  end
-
-  rule port_number
-    positive_number
-  end
-
-  rule domain
-    string
-  end
-
-  rule path
-    "/" string?
-  end
-
   rule string
     [a-zA-Z\.\/]+
-  end
-  
-  rule protocol
-    "https" / "http" / "ftp"
   end
 end
